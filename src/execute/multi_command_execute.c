@@ -69,13 +69,16 @@ void multi_command_execute(t_parse *lst)
 		if (ft_strcmp(lst->content, "|"))
 		{
 			command = nav_redirection(lst->content);
-			delete_quote(command);
-			builtin = builtin_check(command[0]);
-			if (builtin)
-				abs_path = find_path(command[0]);
-			ft_execute(abs_path, command, i, builtin);
-			free_command_db(command);
-			i++;
+			if (command[0])
+			{
+				delete_quote(command);
+				builtin = builtin_check(command[0]);
+				if (builtin)
+					abs_path = find_path(command[0]);
+				ft_execute(abs_path, command, i, builtin);
+				free_command_db(command);
+				i++;
+			}
 		}
 		lst = lst->next;
 	}

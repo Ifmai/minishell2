@@ -149,4 +149,7 @@ void    write_export();
 void	update_export(char *add_export);
 void    ft_env();
 void	add_env(char *env_cmd);
+int 	variable_len(char *data);
+char	*get_variable(char *input);
+char	*ft_itoa(int n);
 #endif

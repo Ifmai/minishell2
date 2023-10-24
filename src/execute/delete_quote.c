@@ -63,8 +63,8 @@ static char *change_data(char *str)
 		{
 			if(single_or_double != SINGLE_QUOTE && *temp == '$')
 			{
-				//get variable
-				//str'yi ilerleticez.
+				join_data = get_variable(temp++);
+				temp += variable_len(temp);
 			}
 			else
 				join_data = char_to_string(*temp++);

@@ -4,6 +4,7 @@ SRCS = ./src/main.c \
 		./src/utils_files/reset_utils.c \
 		./src/utils_files/libft_split.c \
 		./src/utils_files/libft_atoi.c \
+		./src/utils_files/libft_itoa.c \
 		./src/utils_files/libft_calloc.c \
 		./src/signal/signal.c \
 		./src/parser/parser.c \
@@ -34,7 +35,8 @@ SRCS = ./src/main.c \
 		./src/builtins/env.c \
 		./src/builtins/unset.c \
 		./src/builtins/nav_builtins.c \
-		./src/builtins/export_utils.c 
+		./src/builtins/export_utils.c \
+		./src/builtins/variables.c
 NAME = minishelli
 CC = gcc
 CFLAGS =  -lreadline  -g

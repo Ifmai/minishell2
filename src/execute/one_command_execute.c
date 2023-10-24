@@ -44,12 +44,15 @@ void    one_command_execute()
 	int		builtin;
 
     command = nav_redirection(g_data->parse->content);
-	delete_quote(command);
-	builtin = builtin_check(command[0]);
-    if(builtin)
-		abs_path = find_path(command[0]);
-	ft_execute(abs_path, command, builtin);
-	duplication(-2, -2);
-	free(abs_path);
-	free_command_db(command);
+	if (command[0])
+	{
+		delete_quote(command);
+		builtin = builtin_check(command[0]);
+		if(builtin)
+			abs_path = find_path(command[0]);
+		ft_execute(abs_path, command, builtin);
+		duplication(-2, -2);
+		free(abs_path);
+		free_command_db(command);
+	}
 }

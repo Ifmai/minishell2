@@ -34,7 +34,7 @@ char	*substr(char *s, int start, int len) // genel
 	if (!s)
 		return (0);
 	if (ft_strlen(s) < start || len <= 0)
-		return (0);
+		return (NULL);
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	i = 0;
